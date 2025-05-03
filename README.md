@@ -41,7 +41,7 @@ I set out to build a home lab that could do double duty: act as a sandbox for ex
 ✅ Created a **centralized smart home platform** combining media management, automation, and secure networking.  
 ✅ Gained hands-on experience in **containerization, firewall management, ACLs, automated deployment of docker containers, and infrastructure as code.**
 
-## Screenshots / Artifacts
+## Dashboards
 ![Central Dashboard](docs/central-dashboard.png)
 ![Unraid Dashboard](docs/unraid-dashboard.png)
 
