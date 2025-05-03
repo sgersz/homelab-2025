@@ -22,7 +22,7 @@ I set out to build a home lab that could do double duty: act as a sandbox for ex
 ✅ **Containerization & Automation:** Deployed applications using Docker; automated provisioning and updates using Ansible playbooks.  
 ✅ **Network Segmentation:** Created VLANs across Unifi switches to separate IoT, work, personal, and guest traffic for security and QoS.  
 ✅ **Security:** Installed redundant Pi-hole servers for DNS filtering and ad-blocking; configured firewall rules to limit east-west and outbound traffic.  
-✅ **Storage & Media:** Built an Unraid-based NAS serving Plex, with automated downloads via Sonarr and Radarr for media organization.  
+✅ **Storage & Media:** Built an Unraid-based NAS serving Plex, with automated downloads via arr's for media organization.  
 ✅ **Home Automation:** Configured Home Assistant; deployed wall-mounted tablets using Fully Kiosk Browser as centralized smart home control panels.
 
 ![Network Diagram](docs/network-diagram.png)  
