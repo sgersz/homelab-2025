@@ -45,6 +45,42 @@ I set out to build a home lab that could do double duty: act as a sandbox for ex
 ![Central Dashboard](docs/central-dashboard.png)
 ![Unraid Dashboard](docs/unraid-dashboard.png)
 
+## 🖥️ Server Hardware
+
+Here’s the hardware powering my homelab:
+
+- **CPU:** Intel i5-13600KF
+- **Motherboard:** Z690 chipset
+- **Memory:** 32GB DDR4
+- **Primary Storage:** Seagate IronWolf drives
+- **Backup Storage:** Seagate Exos drives (used for backups, not for NAS storage)
+- **GPU:** Intel Arc A380 (dedicated for hardware decoding)
+- **Case:** Cooler Master N400
+
+This setup strikes a balance between performance and flexibility, with enough horsepower for media encoding and running multiple containers while keeping things reasonably quiet and cool.
+
+## 📁 Setting Up NAS Shares in Unraid
+
+One of the core goals of this homelab was to centralize my media and files, so setting up **NAS shares in Unraid** was an important piece.
+
+Here’s a quick overview of how I set it up:
+
+1. ✅ **Go to the Shares tab in Unraid.**
+2. ✅ Click **“Add Share”** and give it a name (e.g., `Media`, `Backups`, `Documents`).
+3. ✅ Choose the share settings:
+   - Set the **included/excluded disks** if needed.
+   - Set **use cache** (e.g., “Yes” for faster writes, or “Only” for cache-only shares).
+   - Enable or disable **SMB/NFS/AFP export** depending on what protocols you need.
+4. ✅ Apply any security settings (Public, Secure, Private access).
+5. ✅ Access the share from your devices:
+   - Windows: `\\tower\Media`
+   - macOS: `smb://tower/Media`
+
+I use a mix of **IronWolf drives for primary storage** and **Exos drives for backups** (separate from NAS shares) to keep things reliable and organized.
+
+If you plan to use apps like Plex or Jellyfin, make sure their containers have access to the right share paths (mounted under `/mnt/user/yourshare`).
+
+This setup makes it easy to manage and access files across devices, and integrates seamlessly with the rest of the homelab.
 
 ## Generalized Deployment 
 ## 🚀 Ansible Deployment Playbook
@@ -117,9 +153,31 @@ While Unraid doesn’t natively support Terraform, you can run Terraform from a 
    review - terraform plan
    apply - terraform apply
 
-## Reflection / Learnings
+## 🔐 Docker Permissions & Access
 
-Building a homelab sounded easy… until I actually started building one. 😅 It’s been equal parts rewarding, frustrating, eye-opening, and fun. I wanted a space that could do double duty: a **sandbox to tinker with virtualization, containers, automation, and security**, and a **central hub to finally get all my media organized** (because let’s be honest, it was chaos).
+When running Docker containers (especially on Unraid), it’s important to understand **permissions and user IDs (UID/GID)** to avoid issues with file access across your system.
+
+By default, Docker containers often run as `root` inside the container, but that can cause problems when accessing files on the host if permissions don’t match. To avoid permission errors, many containers let you specify:
+
+- **PUID (User ID)** → the user ID that the container will use inside the container
+- **PGID (Group ID)** → the group ID for access permissions
+
+In Unraid, the default user is typically:
+- `PUID=99`  (user `nobody`)
+- `PGID=100` (group `users`)
+
+I used these values in my containers so they play nicely with Unraid’s permission model. You can check your actual IDs in Unraid’s terminal with:
+
+id nobody
+id users
+
+Docker permissions are a whole thing, and quite the pain if they break. I would suggest looking up the guides on linuxserver.io and docker docs around permissions. 
+
+## 📝 Reflection / Learnings
+
+Building a homelab sounded easy… until I actually started building one. 😅 It’s been equal parts rewarding, frustrating, eye-opening, and fun. I wanted a space that could do double duty: a **sandbox to tinker with virtualization, containers, automation, and security**, and a **central hub to finally get all my media organized** (because let’s be honest, it was chaos). I’ll be sharing more updates in the future, especially around configuring hardware encoding with the Intel Arc GPU—that was definitely a tricky part to figure out.
+
+This was also my **first time using GitHub in a personal way**, and it’s been a blast figuring out GitHub Pages, writing everything up, and pulling this project together. Turns out documenting things can be fun too (who knew?).
 
 I was inspired by a really smart guy (you know who you are 👀) who suggested it’d be a great idea to **create something tangible that shows off technical skills**. Thanks for the kick in the butt—I probably needed it more than I realized!
 
