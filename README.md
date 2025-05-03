@@ -42,7 +42,9 @@ I set out to build a home lab that could do double duty: act as a sandbox for ex
 ✅ Gained hands-on experience in **containerization, firewall management, ACLs, automated deployment of docker containers, and infrastructure as code.**
 
 ## Dashboards
+Homepage for HomeLab
 ![Central Dashboard](docs/central-dashboard.png)
+Unraid Dashboard
 ![Unraid Dashboard](docs/unraid-dashboard.png)
 
 ## 🖥️ Server Hardware
