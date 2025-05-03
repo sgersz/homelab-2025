@@ -197,8 +197,9 @@ At the end of the day, this is about having fun, staying curious, and reminding 
 
 ## 🔗 Related Projects
 
-Looking for more examples of my infrastructure and DevOps work? Check out these related projects:
+Explore more of my infrastructure and DevOps projects:
 
+- [Homelab Monitoring](https://github.com/sgersz/homelab-monitoring): Monitoring stack for my homelab using Prometheus, Grafana, node_exporter, and cAdvisor to visualize system and Docker metrics in real time.
 - [Simple CI/CD Pipeline](https://github.com/sgersz/simplecicd): A hands-on demo of using GitHub Actions to automate Docker builds for a Flask web app.
 - [Workspace Cost Reduction](https://github.com/sgersz/workspacecostreduction): A documented cloud cost optimization project migrating from AWS Workspaces to EC2 + Zscaler ZPA, achieving ~35% per-user savings.
 
