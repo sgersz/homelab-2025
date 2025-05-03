@@ -25,7 +25,7 @@ My goal was to create a secure, scalable, and segmented infrastructure where I c
 ✅ **Storage & Media:** Built an Unraid-based NAS serving Plex, with automated downloads via Sonarr and Radarr for media organization.  
 ✅ **Home Automation:** Configured Home Assistant; deployed wall-mounted tablets using Fully Kiosk Browser as centralized smart home control panels.
 
-![Network Diagram](docs/network-diagram.png)  <!-- update with your actual image path -->
+![Network Diagram](docs/network-diagram.png)  
 
 ## Process
 1. **Virtualization Platform** – Deployed Proxmox; migrated to Unraid for Docker container support and increased flexibility.
@@ -48,7 +48,7 @@ My goal was to create a secure, scalable, and segmented infrastructure where I c
 ![Home Assistant UI](docs/home-assistant-ui.png)
 
 ## Generalized Deployment 
-🚀 Ansible Deployment Playbook
+# 🚀 Ansible Deployment Playbook
 
 This repository includes an Ansible playbook to automatically deploy the core containers in my Homelab 2025 setup. I've included both Jellyfin and Plex.
 
@@ -71,7 +71,7 @@ The playbook ensures all containers are deployed with recommended settings, usin
 
 👉 **[View the Ansible Playbook](https://github.com/sgersz/homelab-2025/blob/main/docs/ansible_deploy.yml)**
 
-## 🚀 Terraform Deployment Script
+# 🚀 Terraform Deployment Script
 
 👉 **[View the Terraform Deployment Script](https://github.com/sgersz/homelab-2025/blob/main/docs/terraform_deploy.tf)**
 
