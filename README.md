@@ -187,12 +187,6 @@ This homelab isn’t just a static build; it’s a **living, evolving project**.
 
 At the end of the day, this is about having fun, staying curious, and reminding myself that **learning never stops**.
 
-## 🔗 Related Projects
-
-Looking for more examples of my infrastructure and DevOps work? Check out these related projects:
-
-- [Simple CI/CD Pipeline](https://github.com/sgersz/simplecicd): A hands-on demo of using GitHub Actions to automate Docker builds for a Flask web app.
-- [Workspace Cost Reduction](https://github.com/sgersz/workspacecostreduction): A documented cloud cost optimization project migrating from AWS Workspaces to EC2 + Zscaler ZPA, achieving ~35% per-user savings.
 
 ## Key Skills Demonstrated
 - Docker, Unraid, Ansible
@@ -200,5 +194,12 @@ Looking for more examples of my infrastructure and DevOps work? Check out these 
 - Pi-hole, Unifi
 - Home Assistant, IoT security
 - Automation, Infrastructure as Code
+
+## 🔗 Related Projects
+
+Looking for more examples of my infrastructure and DevOps work? Check out these related projects:
+
+- [Simple CI/CD Pipeline](https://github.com/sgersz/simplecicd): A hands-on demo of using GitHub Actions to automate Docker builds for a Flask web app.
+- [Workspace Cost Reduction](https://github.com/sgersz/workspacecostreduction): A documented cloud cost optimization project migrating from AWS Workspaces to EC2 + Zscaler ZPA, achieving ~35% per-user savings.
 
   👉 [Connect on LinkedIn](https://www.linkedin.com/in/stevengersztyn/)
