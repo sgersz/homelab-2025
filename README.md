@@ -48,9 +48,9 @@ My goal was to create a secure, scalable, and segmented infrastructure where I c
 ![Home Assistant UI](docs/home-assistant-ui.png)
 
 ## Generalized Deployment 
-## 🚀 Ansible Deployment Playbook
+🚀 Ansible Deployment Playbook
 
-This repository includes an Ansible playbook to automatically deploy the core containers in my Homelab 2025 setup. I've included both Jellyfina and Plex.
+This repository includes an Ansible playbook to automatically deploy the core containers in my Homelab 2025 setup. I've included both Jellyfin and Plex.
 
 - Jellyfin
 - NZBHydra
