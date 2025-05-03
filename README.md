@@ -47,6 +47,32 @@ My goal was to create a secure, scalable, and segmented infrastructure where I c
 ![Unifi VLAN Config](docs/unifi-vlan.png)
 ![Home Assistant UI](docs/home-assistant-ui.png)
 
+## Generalized Deployment 
+## 🚀 Ansible Deployment Playbook
+
+This repository includes an Ansible playbook to automatically deploy the core containers in my Homelab 2025 setup. I've included both Jellyfina and Plex.
+
+- Jellyfin
+- NZBHydra
+- Pi-hole
+- Overseerr
+- Plex
+- Radarr
+- Readarr
+- SABnzbd
+- Sonarr
+- Heimdall
+- Homepage
+- Jellyseerr
+- Nginx Proxy Manager
+- Portainer CE
+
+The playbook ensures all containers are deployed with recommended settings, using Docker on Unraid.
+
+👉 **[View the Ansible Playbook](https://github.com/sgersz/homelab-2025/blob/main/docs/ansible_deploy.yml)**
+
+Feel free to adapt the playbook to your environment or contribute improvements!
+
 ## Reflection / Learnings
 This project strengthened my expertise in **virtualization, automation, network security, and cloud infrastructure management** by bridging enterprise concepts into a home environment. It challenged me to balance **security, performance, and user experience** while managing complex, interconnected systems independently.
 
