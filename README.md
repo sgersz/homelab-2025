@@ -42,9 +42,10 @@ My goal was to create a secure, scalable, and segmented infrastructure where I c
 ✅ Gained hands-on experience in **IAM principles, firewall management, Zero Trust segmentation, and infrastructure as code.**
 
 ## Screenshots / Artifacts
-![Unraid Dashboard](images/unraid-dashboard.png)
-![Unifi VLAN Config](images/unifi-vlan.png)
-![Home Assistant UI](images/home-assistant-ui.png)
+![Central Dashboard](docs/central-dashboard.png)
+![Home Assistant UI](docs/home-assistant-ui.png)
+![Unifi VLAN Config](docs/unifi-vlan.png)
+![Home Assistant UI](docs/home-assistant-ui.png)
 
 ## Reflection / Learnings
 This project strengthened my expertise in **virtualization, automation, network security, and cloud infrastructure management** by bridging enterprise concepts into a home environment. It challenged me to balance **security, performance, and user experience** while managing complex, interconnected systems independently.
