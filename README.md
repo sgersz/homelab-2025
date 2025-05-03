@@ -1,38 +1,57 @@
-# 🏡 Homelab 2025 Project
+# 🏠 Home Lab 2025: Secure, Scalable Virtual Infrastructure
 
-Welcome to my Homelab 2025 project! This repo documents my journey in designing, deploying, and securing a fully-featured homelab environment—leveraging the same skills I use in enterprise cloud environments.
+## Goal / Problem Statement
+I set out to build a home lab that mirrors enterprise-level cloud and network environments, providing a hands-on platform to experiment with **virtualization, containerization, automation, and security** while managing real-world complexity at home.
 
-## 🔍 Goals
-- Build a scalable, resilient lab environment to simulate production workloads
-- Practice Infrastructure as Code (IaC) with Terraform and Ansible
-- Automate deployments across Proxmox and AWS
-- Secure services with best practices in IAM, firewalling, and segmentation
-- Integrate identity management (Okta, Azure AD) for SSO in self-hosted apps
-- Document architecture and automation to share with others
+My goal was to create a secure, scalable, and segmented infrastructure where I could:
+- Test cloud deployments and DevOps pipelines
+- Explore identity and access management
+- Implement Zero Trust principles
+- Automate deployments and network operations
 
-## 🏗️ Technologies Used
-- Proxmox VE
-- Terraform
-- Ansible
-- pfSense
-- GitHub Actions
-- Docker
-- AWS EC2 / S3 (hybrid integration)
-- Okta / Azure AD (SSO experiments)
+## Technologies Used
+- **Virtualization:** Proxmox, Unraid
+- **Containerization:** Docker, Ansible
+- **Networking:** Unifi, VLANs, Pi-hole
+- **Storage:** Unraid NAS, Plex, Sonarr, Radarr
+- **Security:** Pi-hole DNS filtering, Unifi firewall rules
+- **Home Automation:** Home Assistant, wall-mounted tablets
 
-## 🚀 Highlights
-- ✅ Automated VM provisioning with Terraform + Proxmox API
-- ✅ Centralized logging with Loki + Grafana
-- ✅ Reverse proxy + HTTPS with Traefik
-- ✅ SSO integration with Okta and self-hosted apps
-- ✅ Zero-trust network design with VLANs + firewalling
+## Architecture Overview
+✅ **Virtualization Layer:** Started with Proxmox → migrated to Unraid for native Docker support and easier container management.  
+✅ **Containerization & Automation:** Deployed applications using Docker; automated provisioning and updates using Ansible playbooks.  
+✅ **Network Segmentation:** Created VLANs across Unifi switches to separate IoT, work, personal, and guest traffic for security and QoS.  
+✅ **Security:** Installed redundant Pi-hole servers for DNS filtering and ad-blocking; configured firewall rules to limit east-west and outbound traffic.  
+✅ **Storage & Media:** Built an Unraid-based NAS serving Plex, with automated downloads via Sonarr and Radarr for media organization.  
+✅ **Home Automation:** Configured Home Assistant; deployed wall-mounted tablets using Fully Kiosk Browser as centralized smart home control panels.
 
-## 📸 Architecture
-![network diagram](docs/network-diagram.png)
+![Network Diagram](images/network-diagram.png)  <!-- update with your actual image path -->
 
-## 📚 Documentation
-Check `/docs` for detailed config notes and diagrams.
+## Process
+1. **Virtualization Platform** – Deployed Proxmox; migrated to Unraid for Docker container support and increased flexibility.
+2. **Containerization & Automation** – Automated application deployments with Docker and Ansible to minimize manual maintenance.
+3. **Network Security** – Installed redundant Pi-hole servers; configured Unifi firewall rules for DNS filtering and network protection.
+4. **Network Segmentation** – Designed VLANs to isolate IoT, personal, work, and guest traffic to reduce risk and optimize performance.
+5. **Storage & Media Management** – Built Unraid NAS to store backups and media; integrated Plex, Sonarr, and Radarr for automated library management.
+6. **Home Automation** – Integrated Home Assistant; repurposed tablets into control hubs for centralized smart device management.
 
----
+## Key Outcomes
+✅ Built a **fully segmented, secure network** supporting enterprise-level security practices at home.  
+✅ Automated **90% of deployment and updates** across apps and containers using Ansible.  
+✅ Created a **centralized smart home platform** combining media management, automation, and secure networking.  
+✅ Gained hands-on experience in **IAM principles, firewall management, Zero Trust segmentation, and infrastructure as code.**
 
-This repo will continue evolving as I iterate and expand the homelab. I’d love feedback or questions—feel free to open an issue!
+## Screenshots / Artifacts
+![Unraid Dashboard](images/unraid-dashboard.png)
+![Unifi VLAN Config](images/unifi-vlan.png)
+![Home Assistant UI](images/home-assistant-ui.png)
+
+## Reflection / Learnings
+This project strengthened my expertise in **virtualization, automation, network security, and cloud infrastructure management** by bridging enterprise concepts into a home environment. It challenged me to balance **security, performance, and user experience** while managing complex, interconnected systems independently.
+
+## Key Skills Demonstrated
+- Docker, Unraid, Ansible
+- Network segmentation, VLANs, firewall config
+- Pi-hole, Unifi
+- Home Assistant, IoT security
+- Automation, Infrastructure as Code
