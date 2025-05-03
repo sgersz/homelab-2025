@@ -43,9 +43,8 @@ I set out to build a home lab that could do double duty: act as a sandbox for ex
 
 ## Screenshots / Artifacts
 ![Central Dashboard](docs/central-dashboard.png)
-![Home Assistant UI](docs/home-assistant-ui.png)
-![Unifi VLAN Config](docs/unifi-vlan.png)
-![Home Assistant UI](docs/home-assistant-ui.png)
+![Unraid Dashboard](docs/unraid-dashboard.png)
+
 
 ## Generalized Deployment 
 ## 🚀 Ansible Deployment Playbook
