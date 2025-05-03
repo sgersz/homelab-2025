@@ -71,7 +71,10 @@ The playbook ensures all containers are deployed with recommended settings, usin
 
 👉 **[View the Ansible Playbook](https://github.com/sgersz/homelab-2025/blob/main/docs/ansible_deploy.yml)**
 
-Feel free to adapt the playbook to your environment or contribute improvements!
+## 🚀 Terraform Deployment Script
+
+👉 **[View the Terraform Deployment Script](https://github.com/sgersz/homelab-2025/blob/main/docs/terraform_deploy.tf)**
+
 
 ## Reflection / Learnings
 This project strengthened my expertise in **virtualization, automation, network security, and cloud infrastructure management** by bridging enterprise concepts into a home environment. It challenged me to balance **security, performance, and user experience** while managing complex, interconnected systems independently.
