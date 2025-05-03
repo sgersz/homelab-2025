@@ -1,0 +1,173 @@
+---
+- name: Deploy containers on Unraid
+  hosts: unraid
+  become: true
+  vars:
+    docker_network: bridge
+    data_dir: "/mnt/user/appdata"  # Adjust to your Unraid appdata path
+  tasks:
+
+    - name: Ensure Docker is installed
+      ansible.builtin.package:
+        name: docker
+        state: present
+
+    - name: Pull & run Jellyfin
+      community.docker.docker_container:
+        name: jellyfin
+        image: jellyfin/jellyfin:latest
+        restart_policy: unless-stopped
+        ports:
+          - "8096:8096"
+        volumes:
+          - "{{ data_dir }}/jellyfin:/config"
+          - "/mnt/user/media:/media"
+
+    - name: Pull & run NZBHydra
+      community.docker.docker_container:
+        name: nzbhydra
+        image: linuxserver/nzbhydra2
+        restart_policy: unless-stopped
+        ports:
+          - "5075:5075"
+        volumes:
+          - "{{ data_dir }}/nzbhydra:/config"
+
+    - name: Pull & run Pi-hole
+      community.docker.docker_container:
+        name: pihole
+        image: pihole/pihole:latest
+        restart_policy: unless-stopped
+        ports:
+          - "53:53/tcp"
+          - "53:53/udp"
+          - "80:80"
+          - "443:443"
+        environment:
+          TZ: "America/Chicago"   # Update your timezone
+          WEBPASSWORD: "changeme" # Change password
+        volumes:
+          - "{{ data_dir }}/pihole/etc-pihole:/etc/pihole"
+          - "{{ data_dir }}/pihole/etc-dnsmasq.d:/etc/dnsmasq.d"
+        cap_add:
+          - NET_ADMIN
+
+    - name: Pull & run Overseerr
+      community.docker.docker_container:
+        name: overseerr
+        image: linuxserver/overseerr
+        restart_policy: unless-stopped
+        ports:
+          - "5055:5055"
+        volumes:
+          - "{{ data_dir }}/overseerr:/config"
+
+    - name: Pull & run Plex
+      community.docker.docker_container:
+        name: plex
+        image: linuxserver/plex
+        restart_policy: unless-stopped
+        network_mode: host
+        environment:
+          - PUID=99
+          - PGID=100
+        volumes:
+          - "{{ data_dir }}/plex:/config"
+          - "/mnt/user/media:/media"
+
+    - name: Pull & run Radarr
+      community.docker.docker_container:
+        name: radarr
+        image: linuxserver/radarr
+        restart_policy: unless-stopped
+        ports:
+          - "7878:7878"
+        volumes:
+          - "{{ data_dir }}/radarr:/config"
+          - "/mnt/user/media:/movies"
+
+    - name: Pull & run Readarr
+      community.docker.docker_container:
+        name: readarr
+        image: linuxserver/readarr
+        restart_policy: unless-stopped
+        ports:
+          - "8787:8787"
+        volumes:
+          - "{{ data_dir }}/readarr:/config"
+          - "/mnt/user/media:/books"
+
+    - name: Pull & run SABnzbd
+      community.docker.docker_container:
+        name: sabnzbd
+        image: linuxserver/sabnzbd
+        restart_policy: unless-stopped
+        ports:
+          - "8080:8080"
+        volumes:
+          - "{{ data_dir }}/sabnzbd:/config"
+          - "/mnt/user/downloads:/downloads"
+
+    - name: Pull & run Sonarr
+      community.docker.docker_container:
+        name: sonarr
+        image: linuxserver/sonarr
+        restart_policy: unless-stopped
+        ports:
+          - "8989:8989"
+        volumes:
+          - "{{ data_dir }}/sonarr:/config"
+          - "/mnt/user/media:/tv"
+
+    - name: Pull & run Heimdall
+      community.docker.docker_container:
+        name: heimdall
+        image: linuxserver/heimdall
+        restart_policy: unless-stopped
+        ports:
+          - "80:80"
+        volumes:
+          - "{{ data_dir }}/heimdall:/config"
+
+    - name: Pull & run Homepage
+      community.docker.docker_container:
+        name: homepage
+        image: ghcr.io/gethomepage/homepage:latest
+        restart_policy: unless-stopped
+        ports:
+          - "3000:3000"
+        volumes:
+          - "{{ data_dir }}/homepage:/app/config"
+
+    - name: Pull & run Jellyseerr
+      community.docker.docker_container:
+        name: jellyseerr
+        image: fallenbagel/jellyseerr:latest
+        restart_policy: unless-stopped
+        ports:
+          - "5056:5055"
+        volumes:
+          - "{{ data_dir }}/jellyseerr:/app/config"
+
+    - name: Pull & run Nginx Proxy Manager
+      community.docker.docker_container:
+        name: nginx-proxy-manager
+        image: jc21/nginx-proxy-manager:latest
+        restart_policy: unless-stopped
+        ports:
+          - "81:81"
+          - "80:80"
+          - "443:443"
+        volumes:
+          - "{{ data_dir }}/nginx-proxy-manager:/config"
+
+    - name: Pull & run Portainer CE
+      community.docker.docker_container:
+        name: portainer
+        image: portainer/portainer-ce
+        restart_policy: unless-stopped
+        ports:
+          - "9000:9000"
+        volumes:
+          - "/var/run/docker.sock:/var/run/docker.sock"
+          - "{{ data_dir }}/portainer:/data"
