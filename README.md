@@ -200,3 +200,5 @@ Looking for more examples of my infrastructure and DevOps work? Check out these 
 - Pi-hole, Unifi
 - Home Assistant, IoT security
 - Automation, Infrastructure as Code
+
+  👉 [Connect on LinkedIn](https://www.linkedin.com/in/stevengersztyn/)
