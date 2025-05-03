@@ -25,7 +25,7 @@ My goal was to create a secure, scalable, and segmented infrastructure where I c
 ✅ **Storage & Media:** Built an Unraid-based NAS serving Plex, with automated downloads via Sonarr and Radarr for media organization.  
 ✅ **Home Automation:** Configured Home Assistant; deployed wall-mounted tablets using Fully Kiosk Browser as centralized smart home control panels.
 
-![Network Diagram](images/network-diagram.png)  <!-- update with your actual image path -->
+![Network Diagram](docs/network-diagram.png)  <!-- update with your actual image path -->
 
 ## Process
 1. **Virtualization Platform** – Deployed Proxmox; migrated to Unraid for Docker container support and increased flexibility.
